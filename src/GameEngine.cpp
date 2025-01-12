@@ -19,6 +19,9 @@ void GameEngine::initResources() {
     deadSoundBuffer.loadFromFile("resources/sounds/dead_sound.wav");
     deadSound.setBuffer(deadSoundBuffer);
 
+    winSoundBuffer.loadFromFile("resources/sounds/win_sound.wav");
+    winSound.setBuffer(winSoundBuffer);
+
     gameMusic.openFromFile("resources/sounds/game_music.ogg");
     gameMusic.setVolume(30);
 }
@@ -270,6 +273,7 @@ void GameEngine::update(const float deltaTime) {
 
     if (checkExit()) {
         state = State::win;
+        winSound.play();
     }
 }
 
@@ -288,7 +292,7 @@ void GameEngine::drawEnemies() {
 void GameEngine::drawPickupItems() {
     for (auto const& item : pickupItems) {
         if (item->pickedUp) {
-            return;
+            continue;
         }
         window.draw(item->sprite);
     }

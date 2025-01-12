@@ -92,7 +92,7 @@ void Enemy::updateAction(const sf::FloatRect& playerRect, std::list<Bullet*>& bu
     data.playerY = playerRect.top + rect.height / 2;
     data.enemyY = rect.top + rect.height / 2;
     data.distanceToPlayer = std::hypot(data.playerX - data.enemyX, data.playerY - data.enemyY);
-    data.playerIsRight = data.playerX > data.enemyX;
+    data.isPlayerRight = data.playerX > data.enemyX;
 
     state = walk;
 
@@ -116,23 +116,23 @@ void Enemy::updateRangeAction(EnemyPlayerData data, std::list<Bullet*>& bullets)
     }
 
     if (data.distanceToPlayer > RANGE_FOLLOW_DISTANCE_MIN) {
-        if (data.playerIsRight && dx < 0) {
+        if (data.isPlayerRight && dx < 0) {
             dx *= -1;
             direction = Direction::right;
         }
 
-        if (!data.playerIsRight && dx > 0) {
+        if (!data.isPlayerRight && dx > 0) {
             dx *= -1;
             direction = Direction::left;
         }
         return;
     }
 
-    direction = data.playerIsRight ? Direction::right : Direction::left;
+    direction = data.isPlayerRight ? Direction::right : Direction::left;
 
     state = stay;
 
-    shoot(data.playerIsRight, bullets);
+    shoot(data.isPlayerRight, bullets);
 }
 
 void Enemy::shoot(bool playerIsRight, std::list<Bullet*>& bullets) {
@@ -159,11 +159,11 @@ void Enemy::updateMeleeAction(EnemyPlayerData data) {
     }
 
     if (abs(data.playerY - data.enemyY) < 100 && abs(data.playerX - data.enemyX) > 10) {
-        if (data.playerIsRight && dx < 0) {
+        if (data.isPlayerRight && dx < 0) {
             dx *= -1;
         }
 
-        if (!data.playerIsRight && dx > 0) {
+        if (!data.isPlayerRight && dx > 0) {
             dx *= -1;
         }
     }
@@ -176,10 +176,10 @@ bool Enemy::checkAllowFollow(std::map<int, Door*>& doors, const sf::FloatRect& p
                                                         rect.height);
 
     for (const auto& [index, door] : doors) {
-        if (data.playerIsRight && rectBetweenPlayerRight.intersects(door->doorRect)) {
+        if (data.isPlayerRight && rectBetweenPlayerRight.intersects(door->doorRect)) {
             return false;
         }
-        if (!data.playerIsRight && rectBetweenPlayerLeft.intersects(door->doorRect)) {
+        if (!data.isPlayerRight && rectBetweenPlayerLeft.intersects(door->doorRect)) {
             return false;
         }
     }

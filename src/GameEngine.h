@@ -49,7 +49,9 @@ private:
     sf::Texture backgroundTexture;
     sf::Sprite backgroundSprite;
     sf::SoundBuffer deadSoundBuffer;
+    sf::SoundBuffer winSoundBuffer;
     sf::Sound deadSound;
+    sf::Sound winSound;
     sf::Music gameMusic;
 
     void play();

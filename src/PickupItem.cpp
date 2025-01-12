@@ -52,13 +52,12 @@ void PickupItem::updatePlayer(Player &player, const float deltaTime)
         return;
     }
 
-    pickSound.play();
-
     if (itemType == Item::healthPack && player.health < 100)
     {
         pickedUp = true;
         player.health += 20;
         if (player.health > 100) player.health = 100;
+        pickSound.play();
         return;
     }
 
@@ -66,5 +65,6 @@ void PickupItem::updatePlayer(Player &player, const float deltaTime)
     {
         pickedUp = true;
         player.countBullets += 10;
+        pickSound.play();
     }
 }

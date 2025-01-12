@@ -48,7 +48,7 @@ private:
         float playerY;
         float enemyY;
         float distanceToPlayer;
-        bool playerIsRight;
+        bool isPlayerRight;
     };
 
     void initResources(float x, float y);

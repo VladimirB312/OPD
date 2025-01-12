@@ -253,7 +253,6 @@ void Player::handleCollision(std::vector<TmxObject>& solidObjects, std::map<int,
         }
 
         resolveCollision(door->doorRect, dir);
-
     }
 }
 
