@@ -3,6 +3,7 @@
 #include <cmath>
 
 constexpr float GRAVITY = 1200;
+constexpr float SPEED = 100;
 constexpr float MELEE_FOLLOW_DISTANCE_MAX = 200;
 constexpr float MELEE_FOLLOW_DISTANCE_MIN = 30;
 constexpr float RANGE_FOLLOW_DISTANCE_MAX = 400;
@@ -61,12 +62,12 @@ void Enemy::initRangeResources(float x, float y) {
 void Enemy::setRandomDirection() {
     direction = static_cast<Direction>(rand() % 2);
     if (direction == Direction::left) {
-        dx = -100;
+        dx = -SPEED;
     }
     else {
-        dx = 100;
+        dx = SPEED;
     }
-    dy = 100;
+    dy = SPEED;
 }
 
 void Enemy::update(const sf::FloatRect& playerRect, std::vector<TmxObject>& solidObjects, std::map<int, Door*>& doors,
@@ -110,8 +111,9 @@ void Enemy::updateAction(const sf::FloatRect& playerRect, std::list<Bullet*>& bu
 }
 
 void Enemy::updateRangeAction(EnemyPlayerData data, std::list<Bullet*>& bullets) {
-    if (abs(data.playerY - data.enemyY) > 50 || abs(data.playerX - data.enemyX) < 10 || data.distanceToPlayer >
-        RANGE_FOLLOW_DISTANCE_MAX) {
+    if (abs(data.playerY - data.enemyY) > 30
+        || abs(data.playerX - data.enemyX) < 10
+        || data.distanceToPlayer > RANGE_FOLLOW_DISTANCE_MAX) {
         return;
     }
 

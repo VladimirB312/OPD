@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="32" tileheight="32" nextobjectid="63">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="32" tileheight="32" nextobjectid="64">
  <tileset firstgid="1" name="platformTiles_32x32" tilewidth="32" tileheight="32">
   <image source="platformTiles_32x32.png" width="1120" height="1472"/>
  </tileset>
@@ -349,7 +349,7 @@
    <tile gid="1191"/>
    <tile gid="1191"/>
    <tile gid="1191"/>
-   <tile gid="1191"/>
+   <tile gid="425"/>
    <tile gid="421"/>
    <tile gid="422"/>
    <tile gid="423"/>
@@ -975,7 +975,7 @@
    <tile gid="353"/>
    <tile gid="354"/>
    <tile gid="355"/>
-   <tile gid="356"/>
+   <tile gid="426"/>
    <tile gid="179"/>
    <tile gid="351"/>
    <tile gid="352"/>
@@ -1090,9 +1090,9 @@
    <tile gid="387"/>
    <tile gid="388"/>
    <tile gid="389"/>
-   <tile gid="390"/>
-   <tile gid="141"/>
-   <tile gid="142"/>
+   <tile gid="386"/>
+   <tile gid="391"/>
+   <tile gid="388"/>
    <tile gid="386"/>
    <tile gid="387"/>
    <tile gid="388"/>
@@ -1130,9 +1130,9 @@
    <tile gid="422"/>
    <tile gid="423"/>
    <tile gid="421"/>
-   <tile gid="422"/>
-   <tile gid="176"/>
-   <tile gid="177"/>
+   <tile gid="425"/>
+   <tile gid="426"/>
+   <tile gid="427"/>
    <tile gid="425"/>
    <tile gid="426"/>
    <tile gid="427"/>
@@ -1225,9 +1225,9 @@
   <object id="15" name="solid" x="-2.84217e-14" y="31.1667" width="32" height="885.667"/>
   <object id="16" name="solid" x="1248" y="31.1667" width="32" height="885.667"/>
   <object id="17" name="solid" x="129" y="147" width="831.333" height="9.33337"/>
-  <object id="18" name="solid" x="800.333" y="275.667" width="352" height="10"/>
-  <object id="19" name="solid" x="767.667" y="286.333" width="30.6667" height="95.3334"/>
-  <object id="20" name="solid" x="673" y="372.333" width="97.3333" height="11.3334"/>
+  <object id="18" name="solid" x="768.043" y="276.049" width="384" height="11.9091"/>
+  <object id="19" name="solid" x="768.039" y="276.086" width="32.0076" height="106.242"/>
+  <object id="20" name="solid" x="672" y="371.958" width="95.5492" height="12.197"/>
   <object id="22" name="solid" x="449.333" y="437.667" width="93.3333" height="10.6667"/>
   <object id="23" name="solid" x="34.6667" y="404" width="124" height="9.33337"/>
   <object id="24" name="solid" x="128" y="532.667" width="256.667" height="9.33337"/>
@@ -1240,7 +1240,7 @@
   <object id="32" name="solidForEnemy" x="962" y="93.5" width="90" height="63"/>
   <object id="33" name="solidForEnemy" x="450" y="224.5" width="60" height="63"/>
   <object id="34" name="solidForEnemy" x="1153" y="222.5" width="60" height="63"/>
-  <object id="35" name="solidForEnemy" x="738" y="221.5" width="60" height="63"/>
+  <object id="35" name="solidForEnemy" x="705.636" y="225.288" width="60" height="63"/>
   <object id="36" name="solidForEnemy" x="867" y="468.5" width="60" height="63"/>
   <object id="37" name="solidForEnemy" x="386" y="465.5" width="60" height="63"/>
   <object id="38" name="solidForEnemy" x="65" y="477.5" width="60" height="63"/>
@@ -1254,7 +1254,7 @@
   <object id="47" name="solid" x="352" y="724" width="895" height="11"/>
   <object id="48" name="key" type="3" x="1180" y="657.333" width="32" height="32"/>
   <object id="49" name="solidForEnemy" x="223.333" y="657.833" width="126" height="64.3333"/>
-  <object id="50" name="solid" x="352.212" y="737.833" width="31.3333" height="61.6667"/>
+  <object id="50" name="solid" x="351.962" y="724.333" width="32.0833" height="75.5417"/>
   <object id="52" name="solidForEnemy" x="1120.33" y="659.167" width="126" height="64.3333"/>
   <object id="53" name="solid" type="deadly" x="1121.46" y="716.417" width="124.875" height="6.58337"/>
   <object id="54" name="enemy" type="melee" x="592.833" y="619.167" width="17" height="19"/>
@@ -1264,7 +1264,6 @@
   <object id="58" name="ammoPack" x="32.2121" y="891.848" width="52" height="24"/>
   <object id="59" name="healthPack" x="33.5" y="691.667" width="41" height="32" rotation="0.181751"/>
   <object id="60" name="enemy" type="melee" x="425.5" y="796.5" width="17" height="19"/>
-  <object id="61" name="solid" x="192.333" y="863.833" width="63.5833" height="52.5417"/>
-  <object id="62" name="ammoPack" x="178" y="499" width="52" height="24"/>
+  <object id="61" name="solid" x="319.958" y="788.083" width="32.8333" height="11.7917"/>
  </objectgroup>
 </map>

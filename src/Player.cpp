@@ -4,7 +4,12 @@
 #include "Bullet.h"
 #include "Door.h"
 
-constexpr float GRAVITY = 1200;
+constexpr float GRAVITY = 1300;
+constexpr float SPEED = 150;
+constexpr float JUMP_SPEED = 600;
+constexpr float SHOOT_COOLDOWN = 500;
+constexpr float MELEE_ATTACK_COOLDOWN = 500;
+constexpr float HIT_COOLDOWN = 500;
 
 Player::Player() {
     initResources();
@@ -53,17 +58,17 @@ void Player::handleInput(std::list<Bullet*>& bullets, sf::Time& gameTime) {
     keyActivationPressed = false;
     state = state != melee_attack ? stay : melee_attack;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-        dx = -150;
+        dx = -SPEED;
         direction = Direction::left;
         state = state != melee_attack ? walk : melee_attack;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-        dx = 150;
+        dx = SPEED;
         direction = Direction::right;
         state = state != melee_attack ? walk : melee_attack;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && onGround) {
-        dy = -600;
+        dy = -JUMP_SPEED;
         onGround = false;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
@@ -78,7 +83,7 @@ void Player::handleInput(std::list<Bullet*>& bullets, sf::Time& gameTime) {
 }
 
 void Player::meleeAttack(sf::Time& gameTime) {
-    if (gameTime.asMilliseconds() - lastMeleeAttackTime.asMilliseconds() < 500) {
+    if (gameTime.asMilliseconds() - lastMeleeAttackTime.asMilliseconds() < MELEE_ATTACK_COOLDOWN) {
         return;
     }
     lastMeleeAttackTime = gameTime;
@@ -92,7 +97,7 @@ void Player::shoot(std::list<Bullet*>& bullets, sf::Time& gameTime) {
         return;
     }
 
-    if (gameTime.asMilliseconds() - lastShootTime.asMilliseconds() < 500) {
+    if (gameTime.asMilliseconds() - lastShootTime.asMilliseconds() < SHOOT_COOLDOWN) {
         return;
     }
 
@@ -127,7 +132,7 @@ void Player::updateEnemy(Enemy& enemy, sf::Time& gameTime) {
 }
 
 void Player::hit(sf::Time& gameTime) {
-    if (gameTime.asMilliseconds() - lastHitTime.asMilliseconds() > 500 && health > 0) {
+    if (gameTime.asMilliseconds() - lastHitTime.asMilliseconds() > HIT_COOLDOWN && health > 0) {
         enemyHitSound.play();
         lastHitTime = gameTime;
         health -= 10;
