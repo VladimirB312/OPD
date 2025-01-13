@@ -21,8 +21,8 @@ void GameScreens::initPauseMenu() {
     sf::String names_menu[]{"Play", "Restart", "Exit"};
     fontSize = 60;
     menuStep = 80;
-    menuX = 320;
-    menuY = 90;
+    menuX = 370;
+    menuY = 100;
     itemsCount = 3;
     mainMenu = new sf::Text[itemsCount];
 
@@ -106,10 +106,9 @@ void GameScreens::resetSelection() {
         mainMenu[i].setFillColor(textColor);
     }
     mainMenu[mainMenuSelected].setFillColor(selectedColor);
-
 }
 
-void GameScreens::centerText(sf::Text &text) {
+void GameScreens::centerText(sf::Text& text) {
     sf::FloatRect textBounds = text.getLocalBounds();
     float x = (window.getSize().x - textBounds.width) / 2;
     float y = (window.getSize().y - textBounds.height) / 2;
@@ -124,7 +123,7 @@ void GameScreens::drawDeathScreen() {
 }
 
 void GameScreens::openDeathScreen(State& state) {
-    mainView.setCenter({WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2});
+    mainView.setCenter({1920 / 2, 1080 / 2});
     window.setView(mainView);
     centerText(deathScreen);
     sf::Clock clock;
@@ -146,7 +145,7 @@ void GameScreens::drawWinScreen() const {
 }
 
 void GameScreens::openWinScreen(State& state) {
-    mainView.setCenter({WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2});
+    mainView.setCenter({1920 / 2, 1080 / 2});
     window.setView(mainView);
     centerText(winScreen);
     sf::Clock clock;

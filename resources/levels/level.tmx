@@ -1208,7 +1208,7 @@
   </data>
  </layer>
  <objectgroup name="Слой объектов 1">
-  <object id="1" name="door" type="1" x="1135.75" y="159.159" width="16" height="116"/>
+  <object id="1" name="door" type="1" x="1136.03" y="160.116" width="16" height="116"/>
   <object id="2" name="door" type="2" x="142.667" y="415.75" width="16" height="116"/>
   <object id="3" name="player" x="63.6667" y="325.5" width="22" height="29"/>
   <object id="4" name="enemy" type="melee" x="240.5" y="425.5" width="17" height="19"/>
@@ -1225,7 +1225,7 @@
   <object id="15" name="solid" x="-2.84217e-14" y="31.1667" width="32" height="885.667"/>
   <object id="16" name="solid" x="1248" y="31.1667" width="32" height="885.667"/>
   <object id="17" name="solid" x="129" y="147" width="831.333" height="9.33337"/>
-  <object id="18" name="solid" x="768.043" y="276.049" width="384" height="11.9091"/>
+  <object id="18" name="solid" x="768.043" y="276.049" width="383.968" height="11.901"/>
   <object id="19" name="solid" x="768.039" y="276.086" width="32.0076" height="106.242"/>
   <object id="20" name="solid" x="672" y="371.958" width="95.5492" height="12.197"/>
   <object id="22" name="solid" x="449.333" y="437.667" width="93.3333" height="10.6667"/>
@@ -1241,11 +1241,11 @@
   <object id="33" name="solidForEnemy" x="450" y="224.5" width="60" height="63"/>
   <object id="34" name="solidForEnemy" x="1153" y="222.5" width="60" height="63"/>
   <object id="35" name="solidForEnemy" x="705.636" y="225.288" width="60" height="63"/>
-  <object id="36" name="solidForEnemy" x="867" y="468.5" width="60" height="63"/>
-  <object id="37" name="solidForEnemy" x="386" y="465.5" width="60" height="63"/>
+  <object id="36" name="solidForEnemy" x="869.75" y="468.75" width="60" height="63"/>
+  <object id="37" name="solidForEnemy" x="383.273" y="465.5" width="60" height="63"/>
   <object id="38" name="solidForEnemy" x="65" y="477.5" width="60" height="63"/>
   <object id="39" name="healthPack" x="1204.5" y="115" width="41" height="32" rotation="0.181751"/>
-  <object id="40" name="ammoPack" x="319.333" y="251" width="52" height="24"/>
+  <object id="40" name="ammoPack" x="319.083" y="252" width="52" height="24"/>
   <object id="41" name="healthPack" x="961.167" y="500" width="41" height="32" rotation="0.181751"/>
   <object id="42" name="exit" type="EXITTYPE" x="1216.5" y="834.5" width="31" height="93"/>
   <object id="43" name="solid" x="1151.58" y="404.333" width="95.583" height="11.0834"/>

@@ -1,10 +1,8 @@
 #include "GameEngine.h"
-#include <iostream>
 #include "GameScreens.h"
 
 GameEngine::GameEngine() : gameScreens(window, mainView) {
-    // window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "game", sf::Style::Fullscreen);
-    window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "game");
+    window.create(sf::VideoMode(1920, 1080), "game", sf::Style::Fullscreen);
     initResources();
 
     state = State::paused;

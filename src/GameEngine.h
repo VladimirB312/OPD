@@ -11,10 +11,9 @@
 #include "GameHUD.h"
 #include "TmxLevel.h"
 
-// constexpr float WINDOW_HEIGHT = 720;
-// constexpr float WINDOW_WIDTH = 1280;
 constexpr float WINDOW_HEIGHT = 480;
 constexpr float WINDOW_WIDTH = 854;
+
 
 enum class State { paused, playing, reset, game_over, win };
 
